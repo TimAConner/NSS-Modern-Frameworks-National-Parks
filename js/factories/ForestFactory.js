@@ -17,7 +17,7 @@ module.exports = function($q, $http, FBUrl){
     const getForest = (id) => {
         return $q((resolve, reject) => {
             $http
-            .get(`${FBUrl}/forests/${id}.json`)
+            .get(`${FBUrl}/forests.json?orderBy=id&equalTo${id}`)
             .then(({data}) => {
                 resolve(data);
             });
