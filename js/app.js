@@ -18,6 +18,10 @@ const app = angular.module('npsApp', ["ngRoute"])
         templateUrl: '../partials/forest-detail.html',
         controller: 'ForestDetailCtrl'
     })
+    .when('/forests/favorites', {
+        templateUrl: '../partials/forests.html',
+        controller: 'ForestFavCtrl'
+    })
     .otherwise('/forests');
 })
 .run(FBCreds => {
