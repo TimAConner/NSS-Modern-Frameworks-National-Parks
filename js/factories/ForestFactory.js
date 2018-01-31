@@ -1,5 +1,28 @@
 'use strict';
 
-module.exports = function(){
+const firebase = require('firebase');
+
+module.exports = function($q, $http, FBUrl){
     
+    const getForests = () => {
+        return $q((resolve, reject) => {
+            $http
+            .get(`${FBUrl}/forests.json`)
+            .then(({data}) => {
+                resolve(data);
+            });
+        });
+    };
+
+    const getForest = (id) => {
+        return $q((resolve, reject) => {
+            $http
+            .get(`${FBUrl}/forests/${id}.json`)
+            .then(({data}) => {
+                resolve(data);
+            });
+        });
+    };
+
+    return {getForests, getForest};
 };
