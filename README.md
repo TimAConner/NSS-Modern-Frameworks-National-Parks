@@ -7,7 +7,6 @@ This was solo practice in Angular done while attending the [Nashville Software S
 1. Fork and clone the respository
 1. In the root folder, npm init -y
 1. npm install
-1. Run Grunt
 1. Add a 'values' folder in js folder with FBCreds.js file.  Add the code below to it, filling in your own apiKey and authDomain. 
     ```
     'use strict';
@@ -19,6 +18,7 @@ This was solo practice in Angular done while attending the [Nashville Software S
         authDomain: "",
     });
     ```
+1. Run Grunt
 1. You're good to go!
 
 ## Requirments
