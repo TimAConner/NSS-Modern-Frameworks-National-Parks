@@ -1,2 +1,11 @@
-<p>This is a test</p>
-{{test}}
+<!-- TODO: ADD selection of individiual forest -->
+<!-- <button ng-click="getForest('asdf123')">Get Forest</button> -->
+<div>
+    <ul ng-repeat="forest in forests">
+        <li>
+            <a href="#!/forest/{{forest.id}}"><h2>{{forest.name}}</h2></a>
+            <p>{{forest.desc}}</p>
+            <!-- <button ng-click="favoriteForest(forest.id)">Favorite</button> -->
+        </li>
+    </ul>
+</div>

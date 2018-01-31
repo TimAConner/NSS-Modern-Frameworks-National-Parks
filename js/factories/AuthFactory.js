@@ -27,5 +27,5 @@ module.exports = function($q, $http){
         });
     };
 
-    return {};
+    return {createUser, loginUser, logoutUser, isAuthenticated};
 };

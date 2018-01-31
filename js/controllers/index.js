@@ -6,3 +6,4 @@ const app = require('angular').module("npsApp");
 app.controller('ForestCtrl', require('./ForestCtrl'));
 app.controller('ForestDetailCtrl', require('./ForestDetailCtrl'));
 app.controller('ForestFavCtrl', require('./ForestFavCtrl'));
+app.controller('LoginCtrl', require('./LoginCtrl'));

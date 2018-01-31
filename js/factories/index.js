@@ -1,5 +1,6 @@
 'use strict';
-const app = require('angular').module("testApp");
+const app = require('angular').module("npsApp");
 
 // Add factories below
-app.factory('HomeFactory', require('./HomeFactory'));
+app.factory('ForestFactory', require('./ForestFactory'));
+app.factory('AuthFactory', require('./AuthFactory'));
