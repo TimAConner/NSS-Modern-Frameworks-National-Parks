@@ -7,14 +7,18 @@ const firebase = require('firebase');
 const ngRoute = require("angular-route");
 
 const app = angular.module('npsApp', ["ngRoute"])
-.constant("FBUrl", "https://practice-project-d42d4.firebaseio.com/")
+.constant("FBUrl", "https://practice-project-d42d4.firebaseio.com")
 .config($routeProvider => {
     $routeProvider
     .when('/forests', {
         templateUrl: '../partials/forests.html',
         controller: 'ForestCtrl'
     })
-    .otherwise('./forests');
+    .when('/forest/:id', {
+        templateUrl: '../partials/forest-detail.html',
+        controller: 'ForestDetailCtrl'
+    })
+    .otherwise('/forests');
 })
 .run(FBCreds => {
     let {apiKey, authDomain} = FBCreds;
