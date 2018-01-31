@@ -14,15 +14,26 @@ module.exports = function($q, $http, FBUrl){
         });
     };
 
-    const getForest = (id) => {
+    const getForest = id => {
         return $q((resolve, reject) => {
             $http
-            .get(`${FBUrl}/forests.json?orderBy=id&equalTo${id}`)
+            .get(`${FBUrl}/forests.json?orderBy="id"&equalTo=${id}`)
             .then(({data}) => {
                 resolve(data);
             });
         });
     };
 
-    return {getForests, getForest};
+    const favoriteForest = forest => {
+        return $q((resolve, reject) => {
+            $http
+            .post(`${FBUrl}/visitors_favorites.json`, {forest, visitor: 2})
+            .then(({data}) => {
+                resolve(data);
+            });
+        });
+    };
+
+
+    return {getForests, getForest, favoriteForest};
 };
