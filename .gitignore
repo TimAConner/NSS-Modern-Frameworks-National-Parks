@@ -2,3 +2,4 @@ node_modules
 css
 dist
 .sass-cache
+values/FBCreds.js
