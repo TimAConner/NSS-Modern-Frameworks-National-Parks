@@ -5,7 +5,7 @@ module.exports = function($scope, AuthFactory, $window){
        AuthFactory.loginUser($scope.account)
        .then(user => {
            console.log('user', user);
-           $window.location.href = "#!/items/list";
+           $window.location.href = "#!/forests/favorites";
        })
        .catch(err => {
            console.log('err', err);

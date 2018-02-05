@@ -6,7 +6,7 @@ const angular = require('angular');
 const firebase = require('firebase');
 const ngRoute = require("angular-route");
 
-let isAuth = (AuthFactory) =>
+let isAuth = (AuthFactory, $window) =>
     new Promise((resolve, reject) => {
     AuthFactory.isAuthenticated().then(userBool => {
         // Resolve in $routeProvider will only allow the page to load if this returns as resolved.
@@ -14,6 +14,7 @@ let isAuth = (AuthFactory) =>
         if (userBool) {
             resolve();
         } else {
+            $window.location.href = "#!/login";
             reject();   
         }
     });
@@ -58,7 +59,5 @@ require('./values/FBCreds.js');
 require('./factories');
 require('./controllers');
 
-
-// Put routes here
 
 module.exports = app;

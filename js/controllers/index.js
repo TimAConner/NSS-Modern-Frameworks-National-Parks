@@ -7,3 +7,4 @@ app.controller('ForestCtrl', require('./ForestCtrl'));
 app.controller('ForestDetailCtrl', require('./ForestDetailCtrl'));
 app.controller('ForestFavCtrl', require('./ForestFavCtrl'));
 app.controller('LoginCtrl', require('./LoginCtrl'));
+app.controller('NavCtrl', require('./NavCtrl'));
