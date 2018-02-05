@@ -18,4 +18,12 @@ module.exports = function($scope, AuthFactory, $window){
       console.log("logged out", data);
     });
   };
+
+  $scope.register  = () => {
+      AuthFactory
+      .createUser($scope.account)
+      .then(() => {
+          $scope.login();
+      });
+  };
 };
