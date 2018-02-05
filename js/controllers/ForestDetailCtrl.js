@@ -1,7 +1,8 @@
 'use strict';
 
-module.exports = function($scope, ForestFactory, $routeParams){
-    ForestFactory.getForest($routeParams.id)
+module.exports = function($scope, ForestFactory, $routeParams,  $window){
+    ForestFactory
+    .getForest($routeParams.id)
     .then(({desc, id, name}) => {
         $scope.desc = desc;
         $scope.id = id;
@@ -9,7 +10,11 @@ module.exports = function($scope, ForestFactory, $routeParams){
     });
 
     $scope.favoriteForest = id => {
-        ForestFactory.favoriteForest(id);
+        ForestFactory
+        .favoriteForest(id)
+        .then(() => {
+            $window.location.href = "#!/forests/favorites";
+        });
     };
     
 };
