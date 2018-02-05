@@ -4,7 +4,6 @@ module.exports = function($scope, AuthFactory, $window){
    $scope.login = () => {
        AuthFactory.loginUser($scope.account)
        .then(user => {
-           console.log('user', user);
            $window.location.href = "#!/forests/favorites";
        })
        .catch(err => {
@@ -15,7 +14,10 @@ module.exports = function($scope, AuthFactory, $window){
    $scope.logout = () => {
     AuthFactory.logoutUser()
     .then( (data) => {
-      console.log("logged out", data);
+        
+    })
+    .catch(err => {
+        console.log('err', err);
     });
   };
 
@@ -24,6 +26,9 @@ module.exports = function($scope, AuthFactory, $window){
       .createUser($scope.account)
       .then(() => {
           $scope.login();
-      });
+      })
+      .catch(err => {
+        console.log('err', err);
+    });
   };
 };
